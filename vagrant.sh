@@ -1,6 +1,6 @@
 #!/bin/bash
 
-LOCKFILE=~/scripts/vagrant.lock
+LOCKFILE=vagrant.lock
 if [ -e ${LOCKFILE} ] && kill -0 `cat ${LOCKFILE}`; then
     echo "already running"
     exit
@@ -21,3 +21,4 @@ else
 fi
 
 rm -f ${LOCKFILE}
+end
