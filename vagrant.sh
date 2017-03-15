@@ -1,8 +1,14 @@
 #!/bin/bash
 
-LOCKFILE=vagrant.lock
+LOCKFILE=~/vagrant.lock
 if [ -e ${LOCKFILE} ] && kill -0 `cat ${LOCKFILE}`; then
-    echo "already running"
+    echo "already running an instance of this script"
+
+	for i in {5..1}
+	do
+		echo -ne "\rclosing terminal in $i seconds"
+		sleep 1
+	done
     exit
 fi
 
